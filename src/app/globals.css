@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #0a0a0a;
-  --color-fg: #fafafa;
-  --color-muted: #737373;
-  --color-accent: #e5e5e5;
-  --color-border: #262626;
-  --color-surface: #141414;
+  --color-bg: #fcfcfc;
+  --color-fg: #0a0a0a;
+  --color-muted: #999;
+  --color-subtle: #bbb;
+  --color-border: #e8e8e8;
+  --color-surface: #f5f5f5;
 }
 
 html {
@@ -20,46 +20,160 @@ body {
 }
 
 ::selection {
-  background: #fff;
-  color: #000;
+  background: #0a0a0a;
+  color: #fff;
 }
 
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ---- Scroll-driven reveal ---- */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up-soft {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes clip-in-left {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes clip-in-up {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-@keyframes line-grow {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.animate-reveal {
-  animation: reveal 0.8s ease-out both;
+@keyframes draw-circle {
+  from {
+    stroke-dashoffset: 565;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
-.animate-reveal-delay-1 {
-  animation: reveal 0.8s ease-out 0.15s both;
+/* Hero stagger */
+.hero-reveal-1 {
+  animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+.hero-reveal-2 {
+  animation: clip-in-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+.hero-reveal-3 {
+  animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+}
+.hero-reveal-4 {
+  animation: clip-in-left 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
 }
 
-.animate-reveal-delay-2 {
-  animation: reveal 0.8s ease-out 0.3s both;
+/* Scroll reveal utility – use with IntersectionObserver */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.animate-reveal-delay-3 {
-  animation: reveal 0.8s ease-out 0.45s both;
-}
+/* Stagger children */
+.stagger-children > *:nth-child(1) { transition-delay: 0s; }
+.stagger-children > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { transition-delay: 0.2s; }
+.stagger-children > *:nth-child(4) { transition-delay: 0.25s; }
 
+/* Marquee */
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
-.animate-line-grow {
-  animation: line-grow 1.5s ease-out both;
+/* Spinning badge */
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Circle draw */
+.animate-draw-circle {
+  stroke-dasharray: 565;
+  stroke-dashoffset: 565;
+}
+.is-visible .animate-draw-circle {
+  animation: draw-circle 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hover line slide */
+.hover-line::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-line:hover::after {
+  transform: scaleX(1);
   transform-origin: left;
+}
+
+/* Magnetic button base */
+.magnetic-btn {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
