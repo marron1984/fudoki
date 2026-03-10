@@ -30,9 +30,9 @@ export default function Home() {
           </p>
 
           <h1 className="mb-8 md:mb-16 font-serif text-[clamp(2.6rem,10vw,10rem)] font-[200] leading-[0.9]">
-            <SplitText text="土から、" baseDelay={0.3} />
+            <SplitText text="いのちを育む" baseDelay={0.3} />
             <br />
-            <SplitText text="届くまでの" baseDelay={0.55} />
+            <SplitText text="その手に、" baseDelay={0.55} />
             <br />
             <span className="inline-flex">
               <SplitText text="物語" charClass="!font-[500]" baseDelay={0.9} />
@@ -110,7 +110,7 @@ export default function Home() {
         <div className="animate-h-scroll flex whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <span key={i} className="shrink-0 font-serif text-[clamp(3rem,12vw,10rem)] font-[100] tracking-tight text-border/50 mr-12">
-              Farm to Brand — 土から届くまで —&nbsp;
+              Nurture to Brand — いのちを育む手に、物語を —&nbsp;
             </span>
           ))}
         </div>
