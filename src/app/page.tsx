@@ -183,14 +183,25 @@ export default function Home() {
 
       {/* ===== FOOTER ===== */}
       <footer className="border-t border-border px-5 py-8 md:px-10 md:py-12">
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-5 md:flex-row">
-          <span className="font-serif text-xs font-[300] tracking-[0.25em]">fudoki</span>
-          <nav className="flex gap-8 text-[10px] tracking-[0.15em] uppercase text-muted">
-            <a href="#service" className="tap hline transition-colors duration-400 hover:text-fg">Service</a>
-            <a href="#manifesto" className="tap hline transition-colors duration-400 hover:text-fg">Manifesto</a>
-            <a href="#contact" className="tap hline transition-colors duration-400 hover:text-fg">Contact</a>
-          </nav>
-          <span className="text-[10px] font-[300] text-subtle">&copy; 2026 fudoki Inc.</span>
+        <div className="mx-auto max-w-[1440px]">
+          <div className="flex flex-col items-center justify-between gap-8 md:flex-row md:items-start">
+            <div className="flex flex-col items-center gap-3 md:items-start">
+              <span className="font-serif text-xs font-[300] tracking-[0.25em]">fudoki</span>
+              <div className="text-center md:text-left text-[10px] font-[300] leading-[2] text-muted">
+                <p>株式会社FUDOKI</p>
+                <p>代表取締役 大石哲司</p>
+                <p>〒541-0058 大阪府大阪市中央区南久宝寺町四丁目5番17号<br className="hidden md:inline" /> アップウェル船場 2F</p>
+              </div>
+            </div>
+            <nav className="flex gap-8 text-[10px] tracking-[0.15em] uppercase text-muted">
+              <a href="#service" className="tap hline transition-colors duration-400 hover:text-fg">Service</a>
+              <a href="#manifesto" className="tap hline transition-colors duration-400 hover:text-fg">Manifesto</a>
+              <a href="#contact" className="tap hline transition-colors duration-400 hover:text-fg">Contact</a>
+            </nav>
+          </div>
+          <div className="mt-8 text-center text-[10px] font-[300] text-subtle">
+            &copy; 2026 株式会社FUDOKI
+          </div>
         </div>
       </footer>
     </div>
