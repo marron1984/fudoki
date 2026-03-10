@@ -26,13 +26,13 @@ export default function Home() {
       <section className="px-5 pt-28 pb-16 md:px-10 md:pt-44 md:pb-32">
         <div className="mx-auto w-full max-w-[1440px]">
           <p className="h1 mb-8 md:mb-16 text-[10px] tracking-[0.5em] uppercase text-muted">
-            Branding Studio &mdash; Tokyo
+            Branding for Primary Industry &mdash; Tokyo
           </p>
 
           <h1 className="mb-8 md:mb-16 font-serif text-[clamp(2.6rem,10vw,10rem)] font-[200] leading-[0.9]">
-            <SplitText text="まだ、" baseDelay={0.3} />
+            <SplitText text="土から、" baseDelay={0.3} />
             <br />
-            <SplitText text="語られていない" baseDelay={0.55} />
+            <SplitText text="届くまでの" baseDelay={0.55} />
             <br />
             <span className="inline-flex">
               <SplitText text="物語" charClass="!font-[500]" baseDelay={0.9} />
@@ -44,7 +44,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <p className="h5 max-w-[440px] text-[13px] font-[300] leading-[2.4] text-muted">
-              ブランドの奥底に眠る本質を引き出し、唯一無二の世界観として構築する。fudokiは、言葉にならない価値を形にするブランディングスタジオです。
+              農業、漁業、林業、畜産——一次産業の現場には、まだ言葉になっていない価値が眠っている。fudokiは、つくる人の想いと風土を引き出し、届くべき人へ届けるブランディングスタジオです。
             </p>
             <div className="h6 flex items-center gap-3">
               <span className="animate-pulse-d h-1.5 w-1.5 rounded-full bg-fg" />
@@ -59,7 +59,7 @@ export default function Home() {
         <div className="animate-marquee flex whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex shrink-0">
-              {["Brand Strategy","Visual Identity","Naming","Art Direction","Web Design","Tone of Voice","Packaging","Space Design"].map(t => (
+              {["Brand Strategy","Visual Identity","Naming","Packaging","Web Design","Art Direction","Storytelling","Space Design"].map(t => (
                 <span key={`${i}-${t}`} className="mx-8 font-serif text-[11px] font-[300] tracking-[0.15em] uppercase text-muted/30">{t}</span>
               ))}
             </div>
@@ -73,20 +73,20 @@ export default function Home() {
           <div className="sv mb-12 md:mb-24">
             <p className="mb-3 text-[10px] tracking-[0.5em] uppercase text-muted">What we do</p>
             <h2 className="font-serif text-[clamp(1.8rem,5vw,4rem)] font-[200] leading-[1.15]">
-              本質を、<br />設計する。
+              つくる人の価値を、<br />届ける形に。
             </h2>
           </div>
 
           {/* Cards: rotate-in on scroll */}
           <div className="grid gap-4 md:grid-cols-3">
             <div className="sv-rotate">
-              <Card n="01" t="Brand Strategy" j="ブランド戦略" b="市場調査、競合分析、ターゲット定義。ブランドの立ち位置と方向性を、データと対話から導きます。" />
+              <Card n="01" t="Origin Story" j="産地の物語設計" b="生産者の想い、土地の気候風土、育て方のこだわり。現場に入り込み、まだ言語化されていないブランドの核を引き出します。" />
             </div>
             <div className="sv-rotate sv-rotate-d1">
-              <Card n="02" t="Visual Identity" j="VI設計" b="ロゴ、カラー、タイポグラフィ。すべてのタッチポイントに一貫した視覚言語を創り出します。" />
+              <Card n="02" t="Visual Identity" j="VI・パッケージ設計" b="ロゴ、パッケージ、ラベル。棚に並んだとき、手に取ったとき、食卓に届いたとき——すべての接点で一貫した世界観を。" />
             </div>
             <div className="sv-rotate sv-rotate-d2">
-              <Card n="03" t="Brand Experience" j="体験設計" b="Web、空間、プロダクト。あらゆる接点でブランドの世界観が息づく体験を設計します。" />
+              <Card n="03" t="Brand Experience" j="販路・体験設計" b="EC、直売所、ふるさと納税、飲食店。つくる人と届く人をつなぐ体験と販路を、ブランドの文脈で設計します。" />
             </div>
           </div>
         </div>
@@ -98,11 +98,11 @@ export default function Home() {
           <p className="sv pt-16 md:pt-28 pb-10 md:pb-16 text-[10px] tracking-[0.5em] uppercase text-muted">Manifesto</p>
         </div>
         {/* Each line is a full-width block with generous vertical rhythm */}
-        <ManifestoLine dir="left" num="01">美しいだけのデザインに、意味はない。</ManifestoLine>
-        <ManifestoLine dir="right" num="02">流行は追わない。本質を追う。</ManifestoLine>
-        <ManifestoLine dir="left" num="03">言葉にできないものこそ、価値がある。</ManifestoLine>
-        <ManifestoLine dir="right" num="04">ブランドは作るものではなく、見つけるもの。</ManifestoLine>
-        <ManifestoLine dir="left" num="05" last>私たちは、あなたの風土記を綴る。</ManifestoLine>
+        <ManifestoLine dir="left" num="01">いいものを作れば売れる、という時代は終わった。</ManifestoLine>
+        <ManifestoLine dir="right" num="02">でも、いいものを作る人がいなくなってはいけない。</ManifestoLine>
+        <ManifestoLine dir="left" num="03">畑の土、潮の香り、山の空気。その風土こそがブランドになる。</ManifestoLine>
+        <ManifestoLine dir="right" num="04">つくる人の矜持を、届く人の感動に変える。</ManifestoLine>
+        <ManifestoLine dir="left" num="05" last>私たちは、一次産業の風土記を綴る。</ManifestoLine>
       </section>
 
       {/* ===== BIG SCROLL TEXT ===== */}
@@ -110,7 +110,7 @@ export default function Home() {
         <div className="animate-h-scroll flex whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <span key={i} className="shrink-0 font-serif text-[clamp(3rem,12vw,10rem)] font-[100] tracking-tight text-border/50 mr-12">
-              Brand the unspoken — ブランドの風土を記す —&nbsp;
+              Farm to Brand — 土から届くまで —&nbsp;
             </span>
           ))}
         </div>
@@ -122,8 +122,8 @@ export default function Home() {
           <div className="sv mb-12 md:mb-24">
             <h2 className="font-serif text-[clamp(2rem,6vw,5.5rem)] font-[200] leading-[1.15]">
               風土記&mdash;<br />
-              その土地だけの<br />
-              物語を記すように<span className="text-muted/30">。</span>
+              その土地の風と土を<br />
+              記すように<span className="text-muted/30">。</span>
             </h2>
           </div>
 
@@ -142,15 +142,15 @@ export default function Home() {
 
             <div className="flex flex-col justify-center gap-6 md:gap-8">
               <p className="sv text-[13px] font-[300] leading-[2.4] text-muted">
-                「風土記」とは、奈良時代に編纂された、各地の文化・地理・伝承を記した書物。その土地にしかない固有の物語を、後世に伝えるために。
+                「風土記」とは、奈良時代に各地の気候風土・産物・伝承を記した書物。その土地にしかない固有の豊かさを、後世に伝えるために。
               </p>
               <div className="sv-line h-px bg-border" />
               <p className="sv text-[13px] font-[300] leading-[2.4] text-muted">
-                fudokiは、その精神を現代のブランディングに受け継ぎます。流行を追うのではなく、そのブランドだけが持つ固有の価値を深く掘り下げ、言語化し、視覚化し、体験として設計する。
+                fudokiは、その精神を一次産業のブランディングに受け継ぎます。生産者の哲学、産地の気候、育て方のこだわり——その土地と人にしかない固有の価値を、言語化し、視覚化し、届ける仕組みとして設計する。
               </p>
               <div className="sv-line h-px bg-border" />
               <p className="sv font-serif text-[15px] font-[400] leading-[2.2] text-fg">
-                あなたのブランドの「風土記」を、<br />一緒に編みましょう。
+                あなたの産地の「風土記」を、<br />一緒に編みましょう。
               </p>
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1440px] text-center">
           <p className="sv mb-5 text-[10px] tracking-[0.5em] uppercase text-muted">Start a project</p>
           <h2 className="sv mx-auto mb-10 md:mb-16 max-w-3xl font-serif text-[clamp(1.8rem,5vw,4.5rem)] font-[200] leading-[1.3]">
-            あなたのブランドの<br />
+            あなたの産地の<br />
             <em className="not-italic font-[500]">風土記</em>を、<br />
             一緒に綴りませんか。
           </h2>
