@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "fudoki - ブランドの風土を、記す。",
+  title: "fudoki - Brand the unspoken.",
   description:
-    "fudokiは、ブランドの本質を引き出し、一貫したブランド体験を構築するブランディングサービスです。",
+    "ブランドの本質を引き出し、唯一無二の世界観を構築する。fudokiは、言語化されていない価値を形にするブランディングスタジオです。",
 };
 
 export default function RootLayout({
@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className="antialiased">
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
