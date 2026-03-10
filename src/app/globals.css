@@ -2,37 +2,32 @@
 
 @theme inline {
   --color-bg: #fafafa;
-  --color-fg: #111;
-  --color-muted: #888;
-  --color-subtle: #bbb;
-  --color-border: #e5e5e5;
-  --color-surface: #f2f2f2;
+  --color-fg: #0c0c0c;
+  --color-muted: #777;
+  --color-subtle: #aaa;
+  --color-border: #e0e0e0;
+  --color-surface: #f0f0f0;
   --font-serif: "Noto Serif JP", "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
   --font-sans: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", system-ui, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--color-bg);
   color: var(--color-fg);
   font-family: var(--font-sans);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
-::selection {
-  background: #111;
-  color: #fafafa;
-}
+::selection { background: #0c0c0c; color: #fafafa; }
 
 /* ================================================
-   ANIMATIONS — all transform/opacity based (no clip-path)
+   KEYFRAMES
    ================================================ */
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(60px); }
+  from { opacity: 0; transform: translateY(50px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -41,19 +36,14 @@ body {
   to   { opacity: 1; }
 }
 
-@keyframes slide-right {
-  from { opacity: 0; transform: translateX(-40px); }
-  to   { opacity: 1; transform: translateX(0); }
+@keyframes slide-up {
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
 }
 
-@keyframes width-expand {
+@keyframes scale-x {
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
-}
-
-@keyframes char-up {
-  from { opacity: 0; transform: translateY(100%); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes marquee {
@@ -61,101 +51,132 @@ body {
   to   { transform: translateX(-50%); }
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
-@keyframes draw-circle {
-  from { stroke-dashoffset: 565; }
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.8); }
+}
+
+@keyframes draw {
+  from { stroke-dashoffset: 600; }
   to   { stroke-dashoffset: 0; }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
+@keyframes noise {
+  0%   { transform: translate(0, 0); }
+  10%  { transform: translate(-2%, -2%); }
+  20%  { transform: translate(2%, 1%); }
+  30%  { transform: translate(-1%, 2%); }
+  40%  { transform: translate(1%, -1%); }
+  50%  { transform: translate(-2%, 2%); }
+  60%  { transform: translate(2%, -2%); }
+  70%  { transform: translate(-1%, 1%); }
+  80%  { transform: translate(1%, 2%); }
+  90%  { transform: translate(-2%, -1%); }
+  100% { transform: translate(0, 0); }
 }
 
-@keyframes pulse-dot {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50%      { opacity: 1; transform: scale(1.5); }
+@keyframes horizontal-scroll {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(-100%); }
 }
 
-@keyframes counter-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Hero stagger — cinematic, no clip-path */
-.hero-1 { animation: fade-up 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
-.hero-2 { animation: fade-up 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both; }
-.hero-3 { animation: fade-up 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both; }
-.hero-4 {
-  animation: width-expand 1.8s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
+/* ================================================
+   HERO STAGGER — pure CSS, guaranteed
+   ================================================ */
+.h-anim-1 { animation: fade-up 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+.h-anim-2 { animation: fade-up 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both; }
+.h-anim-3 { animation: fade-up 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both; }
+.h-anim-4 {
+  animation: scale-x 2s cubic-bezier(0.16, 1, 0.3, 1) 1.0s both;
   transform-origin: left;
 }
-.hero-5 { animation: slide-right 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.6s both; }
-.hero-6 { animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) 2.0s both; }
+.h-anim-5 { animation: fade-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both; }
+.h-anim-6 { animation: fade-in 1.5s cubic-bezier(0.16, 1, 0.3, 1) 1.8s both; }
 
-/* Scroll reveal */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(48px);
-  transition:
-    opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+/* Headline word mask — overflow hidden + slide up */
+.word-mask {
+  overflow: hidden;
+  display: inline-block;
 }
-.scroll-reveal.is-visible {
+.word-mask > span {
+  display: inline-block;
+}
+.wm-1 > span { animation: slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
+.wm-2 > span { animation: slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
+.wm-3 > span { animation: slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both; }
+.wm-4 > span { animation: slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both; }
+
+/* ================================================
+   SCROLL REVEAL — CSS-only with animation-timeline
+   Fallback: always visible, animation is progressive enhancement
+   ================================================ */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fade-up 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+  .reveal-scale {
+    animation: scale-in 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* JS-based scroll reveal fallback */
+.sr {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sr.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Stagger children */
-.stagger > * { transition-delay: 0s; }
-.stagger > *:nth-child(2) { transition-delay: 0.1s; }
-.stagger > *:nth-child(3) { transition-delay: 0.2s; }
-.stagger > *:nth-child(4) { transition-delay: 0.3s; }
+/* ================================================
+   UTILITIES
+   ================================================ */
+.animate-marquee { animation: marquee 35s linear infinite; }
+.animate-spin-slow { animation: spin 20s linear infinite; }
+.animate-pulse-dot { animation: pulse 2s ease-in-out infinite; }
+.animate-noise { animation: noise 0.5s steps(3) infinite; }
+.animate-h-scroll { animation: horizontal-scroll 18s linear infinite; }
 
-/* Marquee */
-.animate-marquee { animation: marquee 40s linear infinite; }
-.animate-marquee:hover { animation-play-state: paused; }
-
-/* Spin */
-.animate-spin-slow { animation: spin-slow 24s linear infinite; }
-
-/* Float */
-.animate-float { animation: float 3s ease-in-out infinite; }
-
-/* Pulse dot */
-.animate-pulse-dot { animation: pulse-dot 2.5s ease-in-out infinite; }
-
-/* Draw circle */
 .draw-circle {
-  stroke-dasharray: 565;
-  stroke-dashoffset: 565;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
 }
-.is-visible .draw-circle {
-  animation: draw-circle 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-/* Counter animation */
-.is-visible .counter-up {
-  animation: counter-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+.visible .draw-circle {
+  animation: draw 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Line slide hover */
+/* Hover line */
 .hover-line { position: relative; }
 .hover-line::after {
   content: "";
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 1px;
+  bottom: -2px; left: 0;
+  width: 100%; height: 1px;
   background: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hover-line:hover::after {
   transform: scaleX(1);
@@ -163,20 +184,25 @@ body {
 }
 
 /* Magnetic */
-.magnetic-btn {
-  transition:
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    background 0.4s,
-    color 0.4s,
-    border-color 0.4s;
+.magnetic {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.35s, color 0.35s, border-color 0.35s;
 }
 
-/* Card hover lift */
-.card-hover {
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+/* Card hover */
+.card-lift {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.5s;
 }
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.08);
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.07);
+  border-color: #ccc;
+}
+
+/* Horizontal big text */
+.big-text-scroll {
+  animation: horizontal-scroll 20s linear infinite;
+  white-space: nowrap;
 }

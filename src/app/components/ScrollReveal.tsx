@@ -2,15 +2,13 @@
 
 import { useEffect, useRef } from "react";
 
-export default function ScrollReveal({
+export default function SR({
   children,
   className = "",
-  stagger = false,
   delay = 0,
 }: {
   children: React.ReactNode;
   className?: string;
-  stagger?: boolean;
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -19,19 +17,23 @@ export default function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
+    // Immediately show if already in viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.9) {
+      el.style.transitionDelay = `${delay}ms`;
+      el.classList.add("visible");
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const trigger = () => el.classList.add("is-visible");
-          if (delay > 0) {
-            setTimeout(trigger, delay);
-          } else {
-            trigger();
-          }
+          el.style.transitionDelay = `${delay}ms`;
+          el.classList.add("visible");
           observer.unobserve(el);
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
     );
 
     observer.observe(el);
@@ -39,10 +41,7 @@ export default function ScrollReveal({
   }, [delay]);
 
   return (
-    <div
-      ref={ref}
-      className={`scroll-reveal ${stagger ? "stagger" : ""} ${className}`}
-    >
+    <div ref={ref} className={`sr ${className}`}>
       {children}
     </div>
   );

@@ -19,7 +19,7 @@ export default function MagneticButton({
     const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    el.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
   }, []);
 
   const handleMouseLeave = useCallback(() => {
@@ -32,7 +32,7 @@ export default function MagneticButton({
     <a
       ref={ref}
       href={href}
-      className={`magnetic-btn inline-block ${className}`}
+      className={`magnetic inline-block ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

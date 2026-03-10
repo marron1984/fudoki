@@ -5,15 +5,13 @@ import { useEffect, useRef, useState } from "react";
 export default function CountUp({
   target,
   suffix = "",
-  duration = 2000,
 }: {
   target: number;
   suffix?: string;
-  duration?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(0);
-  const [started, setStarted] = useState(false);
+  const started = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -21,30 +19,25 @@ export default function CountUp({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          setStarted(true);
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
           observer.unobserve(el);
+          const t0 = performance.now();
+          const animate = (now: number) => {
+            const p = Math.min((now - t0) / 1800, 1);
+            const eased = 1 - Math.pow(1 - p, 4);
+            setValue(Math.floor(eased * target));
+            if (p < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [started]);
-
-  useEffect(() => {
-    if (!started) return;
-
-    const startTime = performance.now();
-    const step = (now: number) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [started, target, duration]);
+  }, [target]);
 
   return (
     <span ref={ref}>
