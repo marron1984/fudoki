@@ -24,33 +24,33 @@ export default function Home() {
       </header>
 
       {/* ===== HERO ===== */}
-      <section className="relative px-5 pt-28 pb-16 md:px-10 md:pt-44 md:pb-32">
+      <section className="relative isolate overflow-hidden px-5 pt-28 pb-16 md:px-10 md:pt-44 md:pb-32">
         <HeroVideo />
         <div className="relative z-10 mx-auto w-full max-w-[1440px]">
-          <p className="h1 mb-8 md:mb-16 text-[10px] tracking-[0.5em] uppercase text-fg/60">
+          <p className="h1 mb-8 md:mb-16 text-[10px] tracking-[0.5em] uppercase text-white/50">
             Branding for Primary Industry &mdash; Osaka
           </p>
 
-          <h1 className="mb-8 md:mb-16 font-serif text-[clamp(2.6rem,10vw,10rem)] font-[200] leading-[0.9]">
+          <h1 className="mb-8 md:mb-16 font-serif text-[clamp(2.6rem,10vw,10rem)] font-[200] leading-[0.9] text-white">
             <SplitText text="いのちを育む" baseDelay={0.3} />
             <br />
             <SplitText text="その手に、" baseDelay={0.55} />
             <br />
             <span className="inline-flex">
               <SplitText text="物語" charClass="!font-[500]" baseDelay={0.9} />
-              <SplitText text="を。" charClass="text-muted/30" baseDelay={1.05} />
+              <SplitText text="を。" charClass="text-white/30" baseDelay={1.05} />
             </span>
           </h1>
 
-          <div className="h4 h-px bg-border mb-8 md:mb-16" />
+          <div className="h4 h-px bg-white/20 mb-8 md:mb-16" />
 
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <p className="h5 max-w-[440px] text-[13px] font-[300] leading-[2.4] text-fg/70">
+            <p className="h5 max-w-[440px] text-[13px] font-[300] leading-[2.4] text-white/60">
               農業、漁業、林業、畜産——一次産業の現場には、まだ言葉になっていない価値が眠っている。fudokiは、つくる人の想いと風土を引き出し、届くべき人へ届けるブランディングスタジオです。
             </p>
             <div className="h6 flex items-center gap-3">
-              <span className="animate-pulse-d h-1.5 w-1.5 rounded-full bg-fg" />
-              <span className="text-[9px] tracking-[0.3em] uppercase text-fg/50">Scroll</span>
+              <span className="animate-pulse-d h-1.5 w-1.5 rounded-full bg-white" />
+              <span className="text-[9px] tracking-[0.3em] uppercase text-white/50">Scroll</span>
             </div>
           </div>
         </div>
