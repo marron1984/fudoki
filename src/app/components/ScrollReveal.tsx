@@ -22,15 +22,16 @@ export default function ScrollReveal({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          const trigger = () => el.classList.add("is-visible");
           if (delay > 0) {
-            setTimeout(() => el.classList.add("is-visible"), delay);
+            setTimeout(trigger, delay);
           } else {
-            el.classList.add("is-visible");
+            trigger();
           }
           observer.unobserve(el);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
     );
 
     observer.observe(el);
@@ -40,7 +41,7 @@ export default function ScrollReveal({
   return (
     <div
       ref={ref}
-      className={`scroll-reveal ${stagger ? "stagger-children" : ""} ${className}`}
+      className={`scroll-reveal ${stagger ? "stagger" : ""} ${className}`}
     >
       {children}
     </div>

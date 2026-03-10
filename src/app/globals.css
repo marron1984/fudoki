@@ -27,26 +27,33 @@ body {
   color: #fafafa;
 }
 
-/* ---- Animations ---- */
+/* ================================================
+   ANIMATIONS — all transform/opacity based (no clip-path)
+   ================================================ */
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(48px); }
+  from { opacity: 0; transform: translateY(60px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes clip-up {
-  from { clip-path: inset(100% 0 0 0); }
-  to   { clip-path: inset(0 0 0 0); }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-@keyframes clip-left {
-  from { clip-path: inset(0 100% 0 0); }
-  to   { clip-path: inset(0 0 0 0); }
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes scale-in {
-  from { opacity: 0; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1); }
+@keyframes width-expand {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes char-up {
+  from { opacity: 0; transform: translateY(100%); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes marquee {
@@ -66,30 +73,29 @@ body {
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-12px); }
+  50%      { transform: translateY(-8px); }
 }
 
-@keyframes width-grow {
-  from { width: 0; }
-  to   { width: 100%; }
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.5); }
 }
 
-/* Hero stagger - slow, cinematic */
-.hero-enter-1 {
-  animation: fade-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+@keyframes counter-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.hero-enter-2 {
-  animation: clip-up 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
+
+/* Hero stagger — cinematic, no clip-path */
+.hero-1 { animation: fade-up 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+.hero-2 { animation: fade-up 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both; }
+.hero-3 { animation: fade-up 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both; }
+.hero-4 {
+  animation: width-expand 1.8s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
+  transform-origin: left;
 }
-.hero-enter-3 {
-  animation: fade-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.3s both;
-}
-.hero-enter-4 {
-  animation: clip-left 1.6s cubic-bezier(0.22, 1, 0.36, 1) 1.7s both;
-}
-.hero-enter-5 {
-  animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) 2.1s both;
-}
+.hero-5 { animation: slide-right 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.6s both; }
+.hero-6 { animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) 2.0s both; }
 
 /* Scroll reveal */
 .scroll-reveal {
@@ -105,19 +111,23 @@ body {
 }
 
 /* Stagger children */
-.stagger > *:nth-child(1) { transition-delay: 0s; }
-.stagger > *:nth-child(2) { transition-delay: 0.12s; }
-.stagger > *:nth-child(3) { transition-delay: 0.24s; }
-.stagger > *:nth-child(4) { transition-delay: 0.36s; }
+.stagger > * { transition-delay: 0s; }
+.stagger > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger > *:nth-child(3) { transition-delay: 0.2s; }
+.stagger > *:nth-child(4) { transition-delay: 0.3s; }
 
 /* Marquee */
 .animate-marquee { animation: marquee 40s linear infinite; }
+.animate-marquee:hover { animation-play-state: paused; }
 
 /* Spin */
 .animate-spin-slow { animation: spin-slow 24s linear infinite; }
 
 /* Float */
-.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+/* Pulse dot */
+.animate-pulse-dot { animation: pulse-dot 2.5s ease-in-out infinite; }
 
 /* Draw circle */
 .draw-circle {
@@ -128,10 +138,13 @@ body {
   animation: draw-circle 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Line slide hover */
-.hover-line {
-  position: relative;
+/* Counter animation */
+.is-visible .counter-up {
+  animation: counter-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
+/* Line slide hover */
+.hover-line { position: relative; }
 .hover-line::after {
   content: "";
   position: absolute;
@@ -156,4 +169,14 @@ body {
     background 0.4s,
     color 0.4s,
     border-color 0.4s;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.08);
 }
