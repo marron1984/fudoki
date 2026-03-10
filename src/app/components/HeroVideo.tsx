@@ -13,7 +13,7 @@ export default function HeroVideo() {
   }, []);
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute inset-0 z-0 overflow-hidden">
       <video
         ref={ref}
         autoPlay
@@ -25,7 +25,6 @@ export default function HeroVideo() {
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
-      {/* Extra dark overlay for text readability */}
       <div className="absolute inset-0 bg-bg/50" />
     </div>
   );

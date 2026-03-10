@@ -26,7 +26,7 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="relative px-5 pt-28 pb-16 md:px-10 md:pt-44 md:pb-32">
         <HeroVideo />
-        <div className="relative mx-auto w-full max-w-[1440px]">
+        <div className="relative z-10 mx-auto w-full max-w-[1440px]">
           <p className="h1 mb-8 md:mb-16 text-[10px] tracking-[0.5em] uppercase text-fg/60">
             Branding for Primary Industry &mdash; Osaka
           </p>
