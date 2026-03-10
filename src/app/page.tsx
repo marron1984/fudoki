@@ -93,17 +93,16 @@ export default function Home() {
       </section>
 
       {/* ===== MANIFESTO ===== */}
-      <section id="manifesto" className="px-5 py-20 md:px-10 md:py-36 border-y border-border">
-        <div className="mx-auto max-w-[1440px]">
-          <p className="sv mb-10 md:mb-16 text-[10px] tracking-[0.5em] uppercase text-muted">Manifesto</p>
-          <div className="space-y-2 md:space-y-3">
-            <ManifestoLine dir="left">美しいだけのデザインに、意味はない。</ManifestoLine>
-            <ManifestoLine dir="right">流行は追わない。本質を追う。</ManifestoLine>
-            <ManifestoLine dir="left">言葉にできないものこそ、価値がある。</ManifestoLine>
-            <ManifestoLine dir="right">ブランドは作るものではなく、見つけるもの。</ManifestoLine>
-            <ManifestoLine dir="left">私たちは、あなたの風土記を綴る。</ManifestoLine>
-          </div>
+      <section id="manifesto" className="border-y border-border">
+        <div className="mx-auto max-w-[1440px] px-5 md:px-10">
+          <p className="sv pt-16 md:pt-28 pb-10 md:pb-16 text-[10px] tracking-[0.5em] uppercase text-muted">Manifesto</p>
         </div>
+        {/* Each line is a full-width block with generous vertical rhythm */}
+        <ManifestoLine dir="left" num="01">美しいだけのデザインに、意味はない。</ManifestoLine>
+        <ManifestoLine dir="right" num="02">流行は追わない。本質を追う。</ManifestoLine>
+        <ManifestoLine dir="left" num="03">言葉にできないものこそ、価値がある。</ManifestoLine>
+        <ManifestoLine dir="right" num="04">ブランドは作るものではなく、見つけるもの。</ManifestoLine>
+        <ManifestoLine dir="left" num="05" last>私たちは、あなたの風土記を綴る。</ManifestoLine>
       </section>
 
       {/* ===== BIG SCROLL TEXT ===== */}
@@ -212,13 +211,16 @@ function Card({ n, t, j, b }: { n: string; t: string; j: string; b: string }) {
   );
 }
 
-function ManifestoLine({ children, dir }: { children: string; dir: "left" | "right" }) {
+function ManifestoLine({ children, dir, num, last = false }: { children: string; dir: "left" | "right"; num: string; last?: boolean }) {
   return (
-    <div className={`manifesto-line relative w-full ${dir === "left" ? "sv-left" : "sv-right"}`}>
-      <p className={`font-serif text-[clamp(1.2rem,3.2vw,2.8rem)] font-[200] leading-[1.5] ${dir === "right" ? "md:text-right" : ""}`}>
-        {children}
-      </p>
-      <div className="strike" />
+    <div className={`manifesto-line group border-t border-border ${last ? "border-b" : ""} ${dir === "left" ? "sv-left" : "sv-right"}`}>
+      <div className={`mx-auto max-w-[1440px] px-5 md:px-10 py-10 md:py-16 flex flex-col gap-3 md:flex-row md:items-center ${dir === "right" ? "md:flex-row-reverse" : ""}`}>
+        <span className={`text-[10px] tracking-[0.3em] text-subtle shrink-0 ${dir === "right" ? "md:ml-8" : "md:mr-8"}`}>{num}</span>
+        <p className={`relative font-serif text-[clamp(1.3rem,4vw,3rem)] font-[200] leading-[1.4] ${dir === "right" ? "md:text-right md:ml-auto" : ""}`}>
+          {children}
+          <span className="strike" />
+        </p>
+      </div>
     </div>
   );
 }
