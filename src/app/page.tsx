@@ -1,238 +1,204 @@
-import MagneticButton from "./components/MagneticButton";
-import CustomCursor from "./components/CustomCursor";
-import SplitText from "./components/SplitText";
-
-
 export default function Home() {
   return (
-    <div className="grain min-h-screen bg-bg text-fg overflow-x-hidden">
-      <CustomCursor />
+    <div className="min-h-screen bg-bg text-fg">
 
       {/* ===== HEADER ===== */}
-      <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-bg/60">
-        <div className="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-5 md:px-10">
-          <a href="#" className="tap font-serif text-sm font-[300] tracking-[0.2em]">fudoki</a>
-          <nav className="hidden items-center gap-10 text-[10px] tracking-[0.2em] uppercase text-muted md:flex">
-            <a href="#service" className="hline transition-colors duration-400 hover:text-fg">Service</a>
-            <a href="#manifesto" className="hline transition-colors duration-400 hover:text-fg">Manifesto</a>
-            <a href="#contact" className="hline transition-colors duration-400 hover:text-fg">Contact</a>
-          </nav>
-          <MagneticButton href="#contact" className="rounded-full bg-fg px-6 py-2 text-[10px] tracking-[0.15em] uppercase text-bg transition-all duration-400 hover:bg-fg/80">
-            Talk to us
-          </MagneticButton>
+      <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-bg/80">
+        <div className="mx-auto flex h-16 max-w-[960px] items-center justify-between px-6">
+          <a href="#" className="font-serif text-[11px] font-[400] tracking-[0.35em] uppercase">
+            Fudoki Production
+          </a>
+          <a
+            href="#contact"
+            className="text-[10px] tracking-[0.2em] uppercase text-muted transition-colors duration-400 hover:text-fg"
+          >
+            Contact
+          </a>
         </div>
       </header>
 
       {/* ===== HERO ===== */}
-      <section className="px-5 pt-28 pb-16 md:px-10 md:pt-44 md:pb-32">
-        <div className="mx-auto w-full max-w-[1440px]">
-          <p className="h1 mb-8 md:mb-16 text-[10px] tracking-[0.5em] uppercase text-fg/60">
-            Branding for Primary Industry &mdash; Osaka
-          </p>
+      <section className="px-6 pt-36 pb-20 md:pt-52 md:pb-32">
+        <div className="mx-auto max-w-[960px]">
+          {/* 写真エリア — 霧や光など抽象的な自然イメージを配置 */}
+          <div className="mb-16 md:mb-24 aspect-[21/9] w-full overflow-hidden bg-[#e8e6e3]">
+            {/* TODO: 実際の写真に差し替え → public/hero.jpg を配置して下記を有効化 */}
+            {/* <img src="/hero.jpg" alt="" className="h-full w-full object-cover" /> */}
+            <div className="flex h-full w-full items-center justify-center">
+              <span className="text-[10px] tracking-[0.3em] uppercase text-[#bbb]">Photo</span>
+            </div>
+          </div>
 
-          <h1 className="mb-8 md:mb-16 font-serif text-[clamp(2.6rem,10vw,10rem)] font-[200] leading-[0.9]">
-            <SplitText text="いのちを育む" baseDelay={0.3} />
-            <br />
-            <SplitText text="その手に、" baseDelay={0.55} />
-            <br />
-            <span className="inline-flex">
-              <SplitText text="物語" charClass="!font-[500]" baseDelay={0.9} />
-              <SplitText text="を。" charClass="text-muted/30" baseDelay={1.05} />
-            </span>
+          <h1 className="mb-10 md:mb-14 font-serif text-[clamp(1.8rem,5vw,3.6rem)] font-[200] leading-[1.6] tracking-[0.04em]">
+            風土の可能性を、ひらく。
           </h1>
+          <p className="max-w-[520px] text-[13px] font-[300] leading-[2.6] text-muted">
+            生産者とともに、
+            <br />
+            料理人の一皿につながる物語を紡ぎます。
+          </p>
+        </div>
+      </section>
 
-          <div className="h4 h-px bg-border mb-8 md:mb-16" />
+      <Hr />
 
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <p className="h5 max-w-[440px] text-[13px] font-[300] leading-[2.4] text-fg/70">
-              農業、漁業、林業、畜産——一次産業の現場には、まだ言葉になっていない価値が眠っている。fudokiは、つくる人の想いと風土を引き出し、届くべき人へ届けるブランディングスタジオです。
+      {/* ===== FUDOKIとは ===== */}
+      <section className="px-6 py-20 md:py-32">
+        <div className="mx-auto max-w-[960px]">
+          <SectionLabel>FUDOKIとは</SectionLabel>
+          <div className="mt-10 md:mt-14 max-w-[600px]">
+            <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
+              私たち（FUDOKI PRODUCTION／フドキプロダクション）は、
+              <br />
+              生産者と向き合い、
+              <br />
+              食材の味や背景、技術、営みを丁寧に紐解きながら、
+              <br />
+              まだ伝わりきっていない価値をすくい上げています。
             </p>
-            <div className="h6 flex items-center gap-3">
-              <span className="animate-pulse-d h-1.5 w-1.5 rounded-full bg-fg" />
-              <span className="text-[9px] tracking-[0.3em] uppercase text-fg/50">Scroll</span>
-            </div>
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              素材には、まだ届いていない意味があります。
+              <br />
+              それらを丁寧に整理し、
+              <br />
+              料理人の創作へと編み込まれていく環境を整えます。
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ===== MARQUEE ===== */}
-      <div className="border-y border-border py-3.5 overflow-hidden">
-        <div className="animate-marquee flex whitespace-nowrap">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex shrink-0">
-              {["Brand Strategy","Visual Identity","Naming","Packaging","Web Design","Art Direction","Storytelling","Space Design"].map(t => (
-                <span key={`${i}-${t}`} className="mx-8 font-serif text-[11px] font-[300] tracking-[0.15em] uppercase text-muted/30">{t}</span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      <Hr />
 
-      {/* ===== SERVICE ===== */}
-      <section id="service" className="px-5 py-20 md:px-10 md:py-36">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="sv mb-12 md:mb-24">
-            <p className="mb-3 text-[10px] tracking-[0.5em] uppercase text-muted">What we do</p>
-            <h2 className="font-serif text-[clamp(1.8rem,5vw,4rem)] font-[200] leading-[1.15]">
-              つくる人の価値を、<br />届ける形に。
-            </h2>
-          </div>
-
-          {/* Cards: rotate-in on scroll */}
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="sv-rotate">
-              <Card n="01" t="Origin Story" j="産地の物語設計" b="生産者の想い、土地の気候風土、育て方のこだわり。現場に入り込み、まだ言語化されていないブランドの核を引き出します。" />
-            </div>
-            <div className="sv-rotate sv-rotate-d1">
-              <Card n="02" t="Visual Identity" j="VI・パッケージ設計" b="ロゴ、パッケージ、ラベル。棚に並んだとき、手に取ったとき、食卓に届いたとき——すべての接点で一貫した世界観を。" />
-            </div>
-            <div className="sv-rotate sv-rotate-d2">
-              <Card n="03" t="Brand Experience" j="販路・体験設計" b="EC、直売所、ふるさと納税、飲食店。つくる人と届く人をつなぐ体験と販路を、ブランドの文脈で設計します。" />
-            </div>
+      {/* ===== 一皿と向き合う方々へ ===== */}
+      <section className="px-6 py-20 md:py-32">
+        <div className="mx-auto max-w-[960px]">
+          <SectionLabel>一皿と向き合う方々へ</SectionLabel>
+          <div className="mt-10 md:mt-14 max-w-[600px]">
+            <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
+              素材の背景まで引き受けながら、一皿と向き合う料理人の方々へ。
+            </p>
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              価格や希少性だけではなく、その土地の営みや技術まで理解し、
+              <br />
+              料理として表現しようとする方と、仕事を重ねていきたいと考えています。
+            </p>
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              まだ広く知られていない食材にも、確かな価値があります。
+              <br />
+              その本質を共有し、
+              <br />
+              料理として立ち上がっていく過程を、
+              <br />
+              ともに築いていきます。
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ===== MANIFESTO ===== */}
-      <section id="manifesto" className="border-y border-border">
-        <div className="mx-auto max-w-[1440px] px-5 md:px-10">
-          <p className="sv pt-16 md:pt-28 pb-10 md:pb-16 text-[10px] tracking-[0.5em] uppercase text-muted">Manifesto</p>
+      <Hr />
+
+      {/* ===== 生産者の方へ ===== */}
+      <section className="px-6 py-20 md:py-32">
+        <div className="mx-auto max-w-[960px]">
+          <SectionLabel>生産者の方へ</SectionLabel>
+          <div className="mt-10 md:mt-14 max-w-[600px]">
+            <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
+              自らの仕事に誇りを持ち、
+              <br />
+              素材と真剣に向き合っている生産者の方へ。
+            </p>
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              販路が限られていることや、
+              <br />
+              適切な価格で届けきれていないことに、
+              <br />
+              もどかしさを感じていませんか。
+            </p>
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              私たちは、売り方だけを変えることはしません。
+              <br />
+              背景や技術、営みを見つめ直し、
+              <br />
+              料理の現場との接点を一から設計していきます。
+            </p>
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              その過程では、
+              <br />
+              これまでのやり方を問い直す場面もあるかもしれません。
+              <br />
+              本気で価値を高めたいと考える方と、
+              <br />
+              長く向き合っていきます。
+            </p>
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              価格を上げることが目的ではありません。
+              <br />
+              価値が正しく伝わる状態を整えること。
+              <br />
+              その先に、持続可能な関係が生まれると考えています。
+            </p>
+          </div>
         </div>
-        {/* Each line is a full-width block with generous vertical rhythm */}
-        <ManifestoLine dir="left" num="01">いいものを作れば売れる、という時代は終わった。</ManifestoLine>
-        <ManifestoLine dir="right" num="02">でも、いいものを作る人がいなくなってはいけない。</ManifestoLine>
-        <ManifestoLine dir="left" num="03">畑の土、潮の香り、山の空気。その風土こそがブランドになる。</ManifestoLine>
-        <ManifestoLine dir="right" num="04">つくる人の矜持を、届く人の感動に変える。</ManifestoLine>
-        <ManifestoLine dir="left" num="05" last>私たちは、一次産業の風土記を綴る。</ManifestoLine>
       </section>
 
-      {/* ===== BIG SCROLL TEXT ===== */}
-      <div className="overflow-hidden py-5 md:py-10">
-        <div className="animate-h-scroll flex whitespace-nowrap">
-          {[...Array(2)].map((_, i) => (
-            <span key={i} className="shrink-0 font-serif text-[clamp(3rem,12vw,10rem)] font-[100] tracking-tight text-border/50 mr-12">
-              Nurture to Brand — いのちを育む手に、物語を —&nbsp;
-            </span>
-          ))}
-        </div>
-      </div>
+      <Hr />
 
-      {/* ===== PHILOSOPHY ===== */}
-      <section className="px-5 py-20 md:px-10 md:py-36">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="sv mb-12 md:mb-24">
-            <h2 className="font-serif text-[clamp(2rem,6vw,5.5rem)] font-[200] leading-[1.15]">
-              風土記&mdash;<br />
-              その土地の風と土を<br />
-              記すように<span className="text-muted/30">。</span>
-            </h2>
-          </div>
-
-          <div className="grid gap-12 md:grid-cols-2 md:gap-24">
-            {/* Circle with clip reveal + parallax */}
-            <div className="sv-parallax flex items-center justify-center">
-              <div className="sv-clip relative h-48 w-48 md:h-64 md:w-64">
-                <svg viewBox="0 0 200 200" className="sv-draw h-full w-full">
-                  <circle cx="100" cy="100" r="92" fill="none" stroke="#ddd" strokeWidth=".35" />
-                  <circle cx="100" cy="100" r="66" fill="none" stroke="#ccc" strokeWidth=".35" />
-                  <circle cx="100" cy="100" r="40" fill="none" stroke="#bbb" strokeWidth=".35" />
-                </svg>
-                <span className="absolute inset-0 flex items-center justify-center font-serif text-lg md:text-2xl font-[200] tracking-[0.12em] text-fg/50">風土記</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col justify-center gap-6 md:gap-8">
-              <p className="sv text-[13px] font-[300] leading-[2.4] text-muted">
-                「風土記」とは、奈良時代に各地の気候風土・産物・伝承を記した書物。その土地にしかない固有の豊かさを、後世に伝えるために。
+      {/* ===== CONTACT ===== */}
+      <section id="contact" className="px-6 py-20 md:py-32">
+        <div className="mx-auto max-w-[960px]">
+          <div className="max-w-[600px]">
+            <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
+              ともに時間をかけて向き合える方と、
+              <br />
+              出会えればと考えています。
+            </p>
+            <p className="mt-6 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              ご連絡は、下記より。
+            </p>
+            <div className="mt-14 md:mt-20">
+              <p className="font-serif text-[12px] font-[400] tracking-[0.25em] uppercase">
+                Fudoki Production
               </p>
-              <div className="sv-line h-px bg-border" />
-              <p className="sv text-[13px] font-[300] leading-[2.4] text-muted">
-                fudokiは、その精神を一次産業のブランディングに受け継ぎます。生産者の哲学、産地の気候、育て方のこだわり——その土地と人にしかない固有の価値を、言語化し、視覚化し、届ける仕組みとして設計する。
-              </p>
-              <div className="sv-line h-px bg-border" />
-              <p className="sv font-serif text-[15px] font-[400] leading-[2.2] text-fg">
-                あなたの産地の「風土記」を、<br />一緒に編みましょう。
-              </p>
+              <p className="mt-3 text-[12px] font-[300] text-muted">大石 哲司</p>
+              <a
+                href="mailto:hello@fudoki.jp"
+                className="mt-6 inline-block text-[12px] font-[300] text-fg/70 underline underline-offset-4 decoration-fg/20 transition-colors duration-400 hover:text-fg hover:decoration-fg/50"
+              >
+                hello@fudoki.jp
+              </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CTA ===== */}
-      <section id="contact" className="px-5 py-24 md:px-10 md:py-40">
-        <div className="mx-auto max-w-[1440px] text-center">
-          <p className="sv mb-5 text-[10px] tracking-[0.5em] uppercase text-muted">Start a project</p>
-          <h2 className="sv mx-auto mb-10 md:mb-16 max-w-3xl font-serif text-[clamp(1.8rem,5vw,4.5rem)] font-[200] leading-[1.3]">
-            あなたの産地の<br />
-            <em className="not-italic font-[500]">風土記</em>を、<br />
-            一緒に綴りませんか。
-          </h2>
-          <div className="sv-scale">
-            <MagneticButton
-              href="mailto:hello@fudoki.jp"
-              className="group inline-flex items-center gap-4 rounded-full bg-fg px-10 md:px-16 py-4 md:py-5 text-[11px] tracking-[0.15em] uppercase text-bg transition-all duration-400 hover:bg-fg/80"
-            >
-              <span>Contact us</span>
-              <svg className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 12h16m0 0l-6-6m6 6l-6 6" />
-              </svg>
-            </MagneticButton>
-            <p className="mt-5 font-serif text-[11px] font-[300] tracking-[0.3em] text-subtle">hello@fudoki.jp</p>
           </div>
         </div>
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className="border-t border-border px-5 py-8 md:px-10 md:py-12">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="flex flex-col items-center justify-between gap-8 md:flex-row md:items-start">
-            <div className="flex flex-col items-center gap-3 md:items-start">
-              <span className="font-serif text-xs font-[300] tracking-[0.25em]">fudoki</span>
-              <div className="text-center md:text-left text-[10px] font-[300] leading-[2] text-muted">
-                <p>株式会社FUDOKI</p>
-                <p>代表取締役 大石哲司</p>
-                <p>〒541-0058 大阪府大阪市中央区南久宝寺町四丁目5番17号<br className="hidden md:inline" /> アップウェル船場 2F</p>
-              </div>
-            </div>
-            <nav className="flex gap-8 text-[10px] tracking-[0.15em] uppercase text-muted">
-              <a href="#service" className="tap hline transition-colors duration-400 hover:text-fg">Service</a>
-              <a href="#manifesto" className="tap hline transition-colors duration-400 hover:text-fg">Manifesto</a>
-              <a href="#contact" className="tap hline transition-colors duration-400 hover:text-fg">Contact</a>
-            </nav>
+      <footer className="border-t border-border px-6 py-10 md:py-14">
+        <div className="mx-auto max-w-[960px] flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="font-serif text-[10px] font-[400] tracking-[0.3em] uppercase">Fudoki Production</p>
+            <p className="mt-2 text-[10px] font-[300] leading-[2] text-muted">
+              〒541-0058 大阪府大阪市中央区南久宝寺町四丁目5番17号 アップウェル船場 2F
+            </p>
           </div>
-          <div className="mt-8 text-center text-[10px] font-[300] text-subtle">
-            &copy; 2026 株式会社FUDOKI
-          </div>
+          <p className="text-[10px] font-[300] text-subtle">
+            &copy; {new Date().getFullYear()} FUDOKI PRODUCTION
+          </p>
         </div>
       </footer>
     </div>
   );
 }
 
-/* ===== Components ===== */
+/* ===== Sub-components ===== */
 
-function Card({ n, t, j, b }: { n: string; t: string; j: string; b: string }) {
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="clift group border border-border bg-bg p-7 md:p-10">
-      <span className="mb-5 block text-[10px] tracking-[0.25em] text-subtle">{n}</span>
-      <h3 className="mb-1 font-serif text-lg md:text-xl font-[300]">{t}</h3>
-      <p className="mb-4 text-[10px] font-[300] tracking-[0.1em] text-muted">{j}</p>
-      <p className="text-[12px] font-[300] leading-[2.2] text-muted">{b}</p>
-      <div className="mt-5 h-px w-0 bg-fg/15 transition-all duration-700 ease-[cubic-bezier(.16,1,.3,1)] group-hover:w-full" />
-    </div>
+    <h2 className="font-serif text-[clamp(1.4rem,3.5vw,2.2rem)] font-[200] leading-[1.6] tracking-[0.02em]">
+      {children}
+    </h2>
   );
 }
 
-function ManifestoLine({ children, dir, num, last = false }: { children: string; dir: "left" | "right"; num: string; last?: boolean }) {
-  return (
-    <div className={`manifesto-line group border-t border-border ${last ? "border-b" : ""} ${dir === "left" ? "sv-left" : "sv-right"}`}>
-      <div className={`mx-auto max-w-[1440px] px-5 md:px-10 py-10 md:py-16 flex flex-col gap-3 md:flex-row md:items-center ${dir === "right" ? "md:flex-row-reverse" : ""}`}>
-        <span className={`text-[10px] tracking-[0.3em] text-subtle shrink-0 ${dir === "right" ? "md:ml-8" : "md:mr-8"}`}>{num}</span>
-        <p className={`relative font-serif text-[clamp(1.3rem,4vw,3rem)] font-[200] leading-[1.4] ${dir === "right" ? "md:text-right md:ml-auto" : ""}`}>
-          {children}
-          <span className="strike" />
-        </p>
-      </div>
-    </div>
-  );
+function Hr() {
+  return <div className="mx-auto max-w-[960px] px-6"><div className="h-px bg-border" /></div>;
 }

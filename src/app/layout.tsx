@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "fudoki - 一次産業のブランディングスタジオ",
+  title: "FUDOKI PRODUCTION",
   description:
-    "農業、漁業、林業、畜産——つくる人の想いと風土を引き出し、届くべき人へ届ける。fudokiは、一次産業に特化したブランディングスタジオです。",
+    "生産者とともに、料理人の一皿につながる物語を紡ぎます。",
 };
 
 export default function RootLayout({
