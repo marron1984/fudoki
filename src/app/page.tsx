@@ -17,7 +17,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ===== HERO ===== */}
+      {/* ===== TOP ===== */}
       <section className="px-6 pt-36 pb-20 md:pt-52 md:pb-32">
         <div className="mx-auto max-w-[960px]">
           {/* 写真エリア — 霧や光など抽象的な自然イメージを配置 */}
@@ -33,35 +33,39 @@ export default function Home() {
             風土の可能性を、ひらく。
           </h1>
           <p className="max-w-[520px] text-[13px] font-[300] leading-[2.6] text-muted">
-            生産者とともに、
-            <br />
-            料理人の一皿につながる物語を紡ぎます。
+            食材の価値を引き出す。
           </p>
         </div>
       </section>
 
       <Hr />
 
-      {/* ===== FUDOKIとは ===== */}
+      {/* ===== ABOUT ===== */}
       <section className="px-6 py-20 md:py-32">
         <div className="mx-auto max-w-[960px]">
-          <SectionLabel>FUDOKIとは</SectionLabel>
+          <SectionLabel>About</SectionLabel>
           <div className="mt-10 md:mt-14 max-w-[600px]">
             <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
-              私たち（FUDOKI PRODUCTION／フドキプロダクション）は、
-              <br />
-              生産者と向き合い、
-              <br />
-              食材の味や背景、技術、営みを丁寧に紐解きながら、
-              <br />
-              まだ伝わりきっていない価値をすくい上げています。
+              食材の価値は、その土地の風土と生産者の仕事によって生まれます。
             </p>
             <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
-              素材には、まだ届いていない意味があります。
+              FUDOKI PRODUCTION〈フドキプロダクション〉は、
               <br />
-              それらを丁寧に整理し、
+              食材と向き合いながら、その魅力を料理人や市場へ届けていきます。
+            </p>
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              風土に根ざした食材の可能性を見つめ、
               <br />
-              料理人の創作へと編み込まれていく環境を整えます。
+              その価値を次のかたちへとつないでいくこと。
+              <br />
+              それが私たちの仕事です。
+            </p>
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              FUDOKIという名前には、
+              <br />
+              風土とそこに生きる人々の営みを記すという意味が込められています。
+              <br />
+              これからもずっと、私たちは、食材を通して風土の可能性をひらいていきます。
             </p>
           </div>
         </div>
@@ -69,27 +73,34 @@ export default function Home() {
 
       <Hr />
 
-      {/* ===== 一皿と向き合う方々へ ===== */}
+      {/* ===== PHILOSOPHY ===== */}
       <section className="px-6 py-20 md:py-32">
         <div className="mx-auto max-w-[960px]">
-          <SectionLabel>一皿と向き合う方々へ</SectionLabel>
+          <SectionLabel>Philosophy</SectionLabel>
           <div className="mt-10 md:mt-14 max-w-[600px]">
-            <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
-              素材の背景まで引き受けながら、一皿と向き合う料理人の方々へ。
+            <h3 className="font-serif text-[15px] font-[400] leading-[2] tracking-[0.04em]">
+              風土から生まれる価値
+            </h3>
+            <p className="mt-6 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              食材は、ただの素材ではありません。
+              <br />
+              その土地の風土、環境、そして生産者の仕事によって育まれるものです。
             </p>
             <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
-              価格や希少性だけではなく、その土地の営みや技術まで理解し、
+              私たちは、そうした背景と向き合いながら
               <br />
-              料理として表現しようとする方と、仕事を重ねていきたいと考えています。
+              食材が持つ本来の価値を見つめ直します。
             </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
-              まだ広く知られていない食材にも、確かな価値があります。
+
+            <div className="my-14 md:my-16 h-px bg-border" />
+
+            <h3 className="font-serif text-[15px] font-[400] leading-[2] tracking-[0.04em]">
+              食材の可能性をひらく
+            </h3>
+            <p className="mt-6 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              風土に根ざした食材には、まだ知られていない可能性があります。
               <br />
-              その本質を共有し、
-              <br />
-              料理として立ち上がっていく過程を、
-              <br />
-              ともに築いていきます。
+              私たちはその価値を見つけ、磨き、次の価値へとつないでいきます。
             </p>
           </div>
         </div>
@@ -97,46 +108,28 @@ export default function Home() {
 
       <Hr />
 
-      {/* ===== 生産者の方へ ===== */}
+      {/* ===== PROJECTS ===== */}
       <section className="px-6 py-20 md:py-32">
         <div className="mx-auto max-w-[960px]">
-          <SectionLabel>生産者の方へ</SectionLabel>
+          <SectionLabel>Projects</SectionLabel>
           <div className="mt-10 md:mt-14 max-w-[600px]">
             <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
-              自らの仕事に誇りを持ち、
-              <br />
-              素材と真剣に向き合っている生産者の方へ。
+              私たちは、食に関わるさまざまなプロジェクトに取り組んでいます。
             </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
-              販路が限られていることや、
-              <br />
-              適切な価格で届けきれていないことに、
-              <br />
-              もどかしさを感じていませんか。
-            </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
-              私たちは、売り方だけを変えることはしません。
-              <br />
-              背景や技術、営みを見つめ直し、
-              <br />
-              料理の現場との接点を一から設計していきます。
-            </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
-              その過程では、
-              <br />
-              これまでのやり方を問い直す場面もあるかもしれません。
-              <br />
-              本気で価値を高めたいと考える方と、
-              <br />
-              長く向き合っていきます。
-            </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
-              価格を上げることが目的ではありません。
-              <br />
-              価値が正しく伝わる状態を整えること。
-              <br />
-              その先に、持続可能な関係が生まれると考えています。
-            </p>
+            <div className="mt-12 md:mt-16 flex flex-col gap-10 md:gap-12">
+              <ProjectItem
+                title="食材プロデュース / ブランディング"
+                description="食材の価値を見つめ直し、その魅力を料理人や市場へ届けていきます。"
+              />
+              <ProjectItem
+                title="商品開発"
+                description="食材の魅力を活かしながら、新しい商品や価値づくりに取り組みます。"
+              />
+              <ProjectItem
+                title="地域プロジェクト"
+                description="地域の取り組みと連携しながら、食材の可能性を広げていきます。"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -146,14 +139,17 @@ export default function Home() {
       {/* ===== CONTACT ===== */}
       <section id="contact" className="px-6 py-20 md:py-32">
         <div className="mx-auto max-w-[960px]">
-          <div className="max-w-[600px]">
+          <SectionLabel>Contact</SectionLabel>
+          <div className="mt-10 md:mt-14 max-w-[600px]">
             <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
-              ともに時間をかけて向き合える方と、
+              生産者の方、料理人の方、企業の方など、
               <br />
-              出会えればと考えています。
+              私たちの取り組みに関心をお持ちの方はお気軽にご連絡ください。
             </p>
-            <p className="mt-6 text-[13px] font-[300] leading-[2.8] text-fg/80">
-              ご連絡は、下記より。
+            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+              食材のプロデュースや地域プロジェクトなど、
+              <br />
+              さまざまな形での連携を検討しています。
             </p>
             <div className="mt-14 md:mt-20">
               <p className="font-serif text-[12px] font-[400] tracking-[0.25em] uppercase">
@@ -196,6 +192,19 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
     <h2 className="font-serif text-[clamp(1.4rem,3.5vw,2.2rem)] font-[200] leading-[1.6] tracking-[0.02em]">
       {children}
     </h2>
+  );
+}
+
+function ProjectItem({ title, description }: { title: string; description: string }) {
+  return (
+    <div>
+      <h3 className="text-[13px] font-[400] leading-[2]">
+        <span className="mr-2 text-muted">+</span>{title}
+      </h3>
+      <p className="mt-2 text-[13px] font-[300] leading-[2.8] text-fg/80">
+        {description}
+      </p>
+    </div>
   );
 }
 
