@@ -18,21 +18,21 @@ export default function Home() {
       </header>
 
       {/* ===== TOP ===== */}
-      <section className="px-6 pt-36 pb-20 md:pt-52 md:pb-32">
+      <section className="px-6 pt-36 pb-24 md:pt-52 md:pb-36">
         <div className="mx-auto max-w-[960px]">
-          {/* 写真エリア — 霧や光など抽象的な自然イメージを配置 */}
-          <div className="mb-16 md:mb-24 aspect-[21/9] w-full overflow-hidden bg-[#e8e6e3]">
-            {/* TODO: 実際の写真に差し替え → public/hero.jpg を配置して下記を有効化 */}
+          {/* 写真エリア */}
+          <div className="hero-photo mb-16 md:mb-24 aspect-[21/9] w-full overflow-hidden bg-[#e8e6e3]">
+            {/* TODO: public/hero.jpg を配置して下記を有効化 */}
             {/* <img src="/hero.jpg" alt="" className="h-full w-full object-cover" /> */}
             <div className="flex h-full w-full items-center justify-center">
               <span className="text-[10px] tracking-[0.3em] uppercase text-[#bbb]">Photo</span>
             </div>
           </div>
 
-          <h1 className="mb-10 md:mb-14 font-serif text-[clamp(1.8rem,5vw,3.6rem)] font-[200] leading-[1.6] tracking-[0.04em]">
+          <h1 className="hero-title mb-8 md:mb-10 font-serif text-[clamp(2.2rem,6vw,4.5rem)] font-[200] leading-[1.5] tracking-[0.02em]">
             風土の可能性を、ひらく。
           </h1>
-          <p className="max-w-[520px] text-[13px] font-[300] leading-[2.6] text-muted">
+          <p className="hero-sub text-[15px] md:text-[17px] font-[300] leading-[2.2] text-muted">
             食材の価値を引き出す。
           </p>
         </div>
@@ -41,26 +41,28 @@ export default function Home() {
       <Hr />
 
       {/* ===== ABOUT ===== */}
-      <section className="px-6 py-20 md:py-32">
+      <section className="px-6 py-24 md:py-36">
         <div className="mx-auto max-w-[960px]">
-          <SectionLabel>About</SectionLabel>
-          <div className="mt-10 md:mt-14 max-w-[600px]">
-            <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
+          <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
+            About
+          </h2>
+          <div className="mt-12 md:mt-16 max-w-[640px]">
+            <p className="sv text-[15px] font-[300] leading-[2.6] text-fg/80">
               食材の価値は、その土地の風土と生産者の仕事によって生まれます。
             </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+            <p className="sv mt-10 text-[15px] font-[300] leading-[2.6] text-fg/80">
               FUDOKI PRODUCTION〈フドキプロダクション〉は、
               <br />
               食材と向き合いながら、その魅力を料理人や市場へ届けていきます。
             </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+            <p className="sv mt-10 text-[15px] font-[300] leading-[2.6] text-fg/80">
               風土に根ざした食材の可能性を見つめ、
               <br />
               その価値を次のかたちへとつないでいくこと。
               <br />
               それが私たちの仕事です。
             </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+            <p className="sv mt-10 text-[15px] font-[300] leading-[2.6] text-fg/80">
               FUDOKIという名前には、
               <br />
               風土とそこに生きる人々の営みを記すという意味が込められています。
@@ -74,30 +76,32 @@ export default function Home() {
       <Hr />
 
       {/* ===== PHILOSOPHY ===== */}
-      <section className="px-6 py-20 md:py-32">
+      <section className="px-6 py-24 md:py-36">
         <div className="mx-auto max-w-[960px]">
-          <SectionLabel>Philosophy</SectionLabel>
-          <div className="mt-10 md:mt-14 max-w-[600px]">
-            <h3 className="font-serif text-[15px] font-[400] leading-[2] tracking-[0.04em]">
+          <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
+            Philosophy
+          </h2>
+          <div className="mt-12 md:mt-16 max-w-[640px]">
+            <h3 className="sv font-serif text-[18px] md:text-[20px] font-[300] leading-[1.8] tracking-[0.02em]">
               風土から生まれる価値
             </h3>
-            <p className="mt-6 text-[13px] font-[300] leading-[2.8] text-fg/80">
+            <p className="sv mt-6 text-[15px] font-[300] leading-[2.6] text-fg/80">
               食材は、ただの素材ではありません。
               <br />
               その土地の風土、環境、そして生産者の仕事によって育まれるものです。
             </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+            <p className="sv mt-10 text-[15px] font-[300] leading-[2.6] text-fg/80">
               私たちは、そうした背景と向き合いながら
               <br />
               食材が持つ本来の価値を見つめ直します。
             </p>
 
-            <div className="my-14 md:my-16 h-px bg-border" />
+            <div className="sv-line my-16 md:my-20 h-px bg-border" />
 
-            <h3 className="font-serif text-[15px] font-[400] leading-[2] tracking-[0.04em]">
+            <h3 className="sv font-serif text-[18px] md:text-[20px] font-[300] leading-[1.8] tracking-[0.02em]">
               食材の可能性をひらく
             </h3>
-            <p className="mt-6 text-[13px] font-[300] leading-[2.8] text-fg/80">
+            <p className="sv mt-6 text-[15px] font-[300] leading-[2.6] text-fg/80">
               風土に根ざした食材には、まだ知られていない可能性があります。
               <br />
               私たちはその価値を見つけ、磨き、次の価値へとつないでいきます。
@@ -109,23 +113,28 @@ export default function Home() {
       <Hr />
 
       {/* ===== PROJECTS ===== */}
-      <section className="px-6 py-20 md:py-32">
+      <section className="px-6 py-24 md:py-36">
         <div className="mx-auto max-w-[960px]">
-          <SectionLabel>Projects</SectionLabel>
-          <div className="mt-10 md:mt-14 max-w-[600px]">
-            <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
+          <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
+            Projects
+          </h2>
+          <div className="mt-12 md:mt-16 max-w-[640px]">
+            <p className="sv text-[15px] font-[300] leading-[2.6] text-fg/80">
               私たちは、食に関わるさまざまなプロジェクトに取り組んでいます。
             </p>
-            <div className="mt-12 md:mt-16 flex flex-col gap-10 md:gap-12">
+            <div className="mt-14 md:mt-18 flex flex-col gap-12 md:gap-14">
               <ProjectItem
+                className="sv sv-d1"
                 title="食材プロデュース / ブランディング"
                 description="食材の価値を見つめ直し、その魅力を料理人や市場へ届けていきます。"
               />
               <ProjectItem
+                className="sv sv-d2"
                 title="商品開発"
                 description="食材の魅力を活かしながら、新しい商品や価値づくりに取り組みます。"
               />
               <ProjectItem
+                className="sv sv-d3"
                 title="地域プロジェクト"
                 description="地域の取り組みと連携しながら、食材の可能性を広げていきます。"
               />
@@ -137,28 +146,30 @@ export default function Home() {
       <Hr />
 
       {/* ===== CONTACT ===== */}
-      <section id="contact" className="px-6 py-20 md:py-32">
+      <section id="contact" className="px-6 py-24 md:py-36">
         <div className="mx-auto max-w-[960px]">
-          <SectionLabel>Contact</SectionLabel>
-          <div className="mt-10 md:mt-14 max-w-[600px]">
-            <p className="text-[13px] font-[300] leading-[2.8] text-fg/80">
+          <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
+            Contact
+          </h2>
+          <div className="mt-12 md:mt-16 max-w-[640px]">
+            <p className="sv text-[15px] font-[300] leading-[2.6] text-fg/80">
               生産者の方、料理人の方、企業の方など、
               <br />
               私たちの取り組みに関心をお持ちの方はお気軽にご連絡ください。
             </p>
-            <p className="mt-10 text-[13px] font-[300] leading-[2.8] text-fg/80">
+            <p className="sv mt-10 text-[15px] font-[300] leading-[2.6] text-fg/80">
               食材のプロデュースや地域プロジェクトなど、
               <br />
               さまざまな形での連携を検討しています。
             </p>
-            <div className="mt-14 md:mt-20">
-              <p className="font-serif text-[12px] font-[400] tracking-[0.25em] uppercase">
+            <div className="sv mt-16 md:mt-20">
+              <p className="font-serif text-[13px] font-[400] tracking-[0.25em] uppercase">
                 Fudoki Production
               </p>
-              <p className="mt-3 text-[12px] font-[300] text-muted">大石 哲司</p>
+              <p className="mt-3 text-[14px] font-[300] text-muted">大石 哲司</p>
               <a
                 href="mailto:hello@fudoki.jp"
-                className="mt-6 inline-block text-[12px] font-[300] text-fg/70 underline underline-offset-4 decoration-fg/20 transition-colors duration-400 hover:text-fg hover:decoration-fg/50"
+                className="mt-6 inline-block text-[14px] font-[300] text-fg/70 underline underline-offset-4 decoration-fg/20 transition-colors duration-400 hover:text-fg hover:decoration-fg/50"
               >
                 hello@fudoki.jp
               </a>
@@ -187,21 +198,13 @@ export default function Home() {
 
 /* ===== Sub-components ===== */
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function ProjectItem({ title, description, className }: { title: string; description: string; className?: string }) {
   return (
-    <h2 className="font-serif text-[clamp(1.4rem,3.5vw,2.2rem)] font-[200] leading-[1.6] tracking-[0.02em]">
-      {children}
-    </h2>
-  );
-}
-
-function ProjectItem({ title, description }: { title: string; description: string }) {
-  return (
-    <div>
-      <h3 className="text-[13px] font-[400] leading-[2]">
-        <span className="mr-2 text-muted">+</span>{title}
+    <div className={className}>
+      <h3 className="text-[15px] font-[400] leading-[2]">
+        <span className="mr-3 text-muted/60">+</span>{title}
       </h3>
-      <p className="mt-2 text-[13px] font-[300] leading-[2.8] text-fg/80">
+      <p className="mt-2 pl-6 text-[15px] font-[300] leading-[2.6] text-fg/80">
         {description}
       </p>
     </div>
@@ -209,5 +212,5 @@ function ProjectItem({ title, description }: { title: string; description: strin
 }
 
 function Hr() {
-  return <div className="mx-auto max-w-[960px] px-6"><div className="h-px bg-border" /></div>;
+  return <div className="mx-auto max-w-[960px] px-6"><div className="sv-line h-px bg-border" /></div>;
 }
