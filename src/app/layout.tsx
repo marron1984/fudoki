@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "FUDOKI PRODUCTION",
+  title: "FUDOKI — 風土を、記す。",
   description:
-    "生産者とともに、料理人の一皿につながる物語を紡ぎます。",
+    "FUDOKI PRODUCTION｜産地の意志を、一皿の物語へ。生産者と料理人をつなぐ代弁者として、食材の価値を正しく・美しく翻訳します。",
 };
 
 export default function RootLayout({
