@@ -25,14 +25,10 @@ export default function Home() {
       </header>
 
       {/* ===== 1. MAIN VISUAL ===== */}
-      <section className="px-6 pt-36 pb-24 md:pt-52 md:pb-36">
+      <section className="px-6 pt-24 pb-24 md:pt-32 md:pb-36">
         <div className="mx-auto max-w-[960px]">
-          <div className="hero-photo mb-16 md:mb-24 aspect-[21/9] w-full overflow-hidden bg-[#e8e6e3]">
-            {/* TODO: public/hero.jpg を配置して下記を有効化 */}
-            {/* <img src="/hero.jpg" alt="FUDOKI" className="h-full w-full object-cover" /> */}
-            <div className="flex h-full w-full items-center justify-center">
-              <span className="text-[10px] tracking-[0.3em] uppercase text-[#bbb]">Photo</span>
-            </div>
+          <div className="hero-photo mb-12 md:mb-16 aspect-[21/9] w-full overflow-hidden bg-[#e8e6e3]">
+            <img src="/hero.jpg" alt="FUDOKI" className="h-full w-full object-cover" />
           </div>
 
           <h1 className="hero-title mb-8 md:mb-10 font-serif text-[clamp(2.2rem,6vw,4.5rem)] font-[200] leading-[1.5] tracking-[0.08em]">
@@ -121,8 +117,13 @@ export default function Home() {
       <Hr />
 
       {/* ===== 4. SERVICES ===== */}
-      <section id="services" className="px-6 py-24 md:py-36">
-        <div className="mx-auto max-w-[960px]">
+      <section id="services" className="px-6 py-24 md:py-36 relative overflow-hidden">
+        {/* TODO: public/services-bg.jpg を配置（sample 3） */}
+        <div className="hidden md:block absolute top-0 right-0 w-[45%] h-full pointer-events-none">
+          <div className="absolute inset-0 bg-[url('/services-bg.jpg')] bg-cover bg-center blur-[6px] opacity-[0.12]" />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-bg/60 to-bg" />
+        </div>
+        <div className="mx-auto max-w-[960px] relative z-10">
           <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
             Services
           </h2>
@@ -341,6 +342,13 @@ export default function Home() {
               <p className="mt-2 text-[14px] font-[300] text-muted">
                 （株）FUDOKI PRODUCTION
               </p>
+              <p className="mt-4 text-[14px] font-[300] leading-[2.2] text-fg/70">
+                代表取締役　大石 哲司
+              </p>
+              <p className="mt-2 text-[13px] font-[300] leading-[2] text-muted">
+                〒541-0058 大阪府大阪市中央区南久宝寺町四丁目5番17号<br />
+                アップウェル船場 2F
+              </p>
             </div>
 
             <div className="sv-line my-12 md:my-14 h-px bg-border" />
@@ -351,9 +359,6 @@ export default function Home() {
             <p className="sv mt-8 text-[15px] font-[300] leading-[2.6] text-fg/80">
               私たちは机上の空論ではなく、常に産地の土を踏み、海に浸かり、<br />
               生産者と同じ視線で未来を見つめます。
-            </p>
-            <p className="sv mt-10 text-[15px] font-[300] leading-[2.6] text-fg/80">
-              気仙沼を拠点に、日本各地の優れた風土を次世代へ繋ぎます。
             </p>
           </div>
         </div>
