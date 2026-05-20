@@ -118,10 +118,10 @@ export default function Home() {
 
       {/* ===== 4. SERVICES ===== */}
       <section id="services" className="px-6 py-24 md:py-36 relative overflow-hidden">
-        {/* TODO: public/services-bg.jpg を配置（sample 3） */}
         <div className="hidden md:block absolute top-0 right-0 w-[45%] h-full pointer-events-none">
-          <div className="absolute inset-0 bg-[url('/services-bg.jpg')] bg-cover bg-center blur-[6px] opacity-[0.12]" />
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-bg/60 to-bg" />
+          <div className="absolute inset-0 bg-[url('/services-bg.jpg')] bg-cover bg-center blur-[8px] opacity-[0.18]" />
+          <div className="absolute inset-0 bg-gradient-to-l from-bg/30 via-bg/70 to-bg" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg via-transparent to-bg" />
         </div>
         <div className="mx-auto max-w-[960px] relative z-10">
           <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
