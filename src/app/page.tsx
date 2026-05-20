@@ -118,6 +118,12 @@ export default function Home() {
 
       {/* ===== 4. SERVICES ===== */}
       <section id="services" className="px-6 py-24 md:py-36 relative overflow-hidden">
+        {/* SP: セクション上部に横幅いっぱいの背景画像 */}
+        <div className="md:hidden absolute top-0 left-0 w-full h-[45%] pointer-events-none">
+          <div className="absolute inset-0 bg-[url('/services-bg.jpg')] bg-cover bg-[center_30%] opacity-[0.4]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg/40 via-transparent to-bg" />
+        </div>
+        {/* PC: 右側に背景画像 */}
         <div className="hidden md:block absolute top-0 right-0 w-[55%] h-full pointer-events-none">
           <div className="absolute inset-0 bg-[url('/services-bg.jpg')] bg-cover bg-center opacity-[0.55]" />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-bg/30 to-bg" />
