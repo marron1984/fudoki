@@ -117,19 +117,8 @@ export default function Home() {
       <Hr />
 
       {/* ===== 4. SERVICES ===== */}
-      <section id="services" className="px-6 py-24 md:py-36 relative overflow-hidden">
-        {/* SP: セクション上部に横幅いっぱいの背景画像 */}
-        <div className="md:hidden absolute top-0 left-0 w-full h-[45%] pointer-events-none">
-          <div className="absolute inset-0 bg-[url('/services-bg.jpg')] bg-cover bg-[center_30%] opacity-[0.4]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-bg/40 via-transparent to-bg" />
-        </div>
-        {/* PC: 右側に背景画像 */}
-        <div className="hidden md:block absolute top-0 right-0 w-[55%] h-full pointer-events-none">
-          <div className="absolute inset-0 bg-[url('/services-bg.jpg')] bg-cover bg-center opacity-[0.55]" />
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-bg/30 to-bg" />
-          <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg/60" />
-        </div>
-        <div className="mx-auto max-w-[960px] relative z-10">
+      <section id="services" className="px-6 py-24 md:py-36">
+        <div className="mx-auto max-w-[960px]">
           <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
             Services
           </h2>
@@ -318,13 +307,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="sv mt-16 md:mt-20 text-center">
-            <a
-              href="mailto:hello@fudoki.jp"
-              className="inline-block border border-fg/20 px-12 py-4 text-[13px] font-[400] tracking-[0.2em] text-fg/80 transition-all duration-400 hover:border-fg/50 hover:text-fg"
-            >
-              お問い合わせ・資料請求
-            </a>
+          <div className="sv mt-16 md:mt-20 max-w-[640px]">
+            <h3 className="font-serif text-[17px] md:text-[19px] font-[300] leading-[1.8] tracking-[0.04em] mb-8">
+              お問い合わせフォーム
+            </h3>
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -440,6 +427,64 @@ function PartnerItem({ name, area }: { name: string; area: string }) {
       <span className="text-[15px] font-[300] tracking-[0.04em]">{name}</span>
       <span className="text-[11px] tracking-[0.15em] text-muted">{area}</span>
     </div>
+  );
+}
+
+function ContactForm() {
+  const inputClass = "w-full border border-border bg-transparent px-4 py-3 text-[14px] font-[300] text-fg outline-none transition-colors duration-300 focus:border-fg/40 placeholder:text-muted/50";
+  const labelClass = "block text-[12px] font-[400] tracking-[0.1em] text-muted mb-2";
+
+  return (
+    <form
+      action="https://formsubmit.co/fudoki@aska-g.com"
+      method="POST"
+      className="flex flex-col gap-6"
+    >
+      <input type="hidden" name="_subject" value="【FUDOKI】お問い合わせ" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="" />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label className={labelClass}>お名前 *</label>
+          <input type="text" name="name" required placeholder="山田 太郎" className={inputClass} />
+        </div>
+        <div>
+          <label className={labelClass}>会社名・団体名</label>
+          <input type="text" name="company" placeholder="株式会社〇〇" className={inputClass} />
+        </div>
+      </div>
+
+      <div>
+        <label className={labelClass}>メールアドレス *</label>
+        <input type="email" name="email" required placeholder="info@example.com" className={inputClass} />
+      </div>
+
+      <div>
+        <label className={labelClass}>お問い合わせ種別</label>
+        <select name="category" className={`${inputClass} appearance-none`} defaultValue="">
+          <option value="" disabled>選択してください</option>
+          <option value="producer">生産者の方</option>
+          <option value="chef">料理人の方</option>
+          <option value="media">メディア・取材</option>
+          <option value="other">その他</option>
+        </select>
+      </div>
+
+      <div>
+        <label className={labelClass}>お問い合わせ内容 *</label>
+        <textarea name="message" required rows={5} placeholder="お問い合わせ内容をご記入ください" className={`${inputClass} resize-none`} />
+      </div>
+
+      <div className="mt-2">
+        <button
+          type="submit"
+          className="inline-block border border-fg/20 px-12 py-4 text-[13px] font-[400] tracking-[0.2em] text-fg/80 transition-all duration-400 hover:border-fg/50 hover:text-fg hover:bg-fg/[0.03] cursor-pointer"
+        >
+          送信する
+        </button>
+      </div>
+    </form>
   );
 }
 
