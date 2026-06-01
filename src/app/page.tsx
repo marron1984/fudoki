@@ -25,7 +25,7 @@ export default function Home() {
       </header>
 
       {/* ===== 1. MAIN VISUAL ===== */}
-      <section className="px-6 pt-24 pb-24 md:pt-32 md:pb-36">
+      <section className="px-6 pt-20 pb-24 md:pt-24 md:pb-36">
         <div className="mx-auto max-w-[960px]">
           <div className="hero-photo mb-12 md:mb-16 aspect-[21/9] w-full overflow-hidden bg-[#e8e6e3]">
             <img src="/hero.jpg" alt="FUDOKI" className="h-full w-full object-cover" />
