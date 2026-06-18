@@ -12,7 +12,6 @@ export default function Home() {
             <NavLink href="#concept">Concept</NavLink>
             <NavLink href="#role">Role</NavLink>
             <NavLink href="#services">Services</NavLink>
-            <NavLink href="#selection">Selection</NavLink>
             <NavLink href="#contact">Contact</NavLink>
           </nav>
           <a
@@ -43,8 +42,14 @@ export default function Home() {
       <Hr />
 
       {/* ===== 2. CONCEPT ===== */}
-      <section id="concept" className="px-6 py-24 md:py-36">
-        <div className="mx-auto max-w-[960px]">
+      <section id="concept" className="px-6 py-24 md:py-36 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-full md:w-[50%] h-[40%] md:h-full pointer-events-none">
+          <div className="absolute inset-0 bg-[url('/concept-bg.jpg')] bg-cover bg-center opacity-[0.45] md:opacity-[0.5]" />
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-l from-transparent via-bg/40 to-bg" />
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-bg/20 via-transparent to-bg" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg/50 via-transparent to-bg/50" />
+        </div>
+        <div className="mx-auto max-w-[960px] relative z-10">
           <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
             Concept
           </h2>
@@ -200,76 +205,7 @@ export default function Home() {
 
       <Hr />
 
-      {/* ===== 5. SELECTION ===== */}
-      <section id="selection" className="px-6 py-24 md:py-36">
-        <div className="mx-auto max-w-[960px]">
-          <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
-            Selection
-          </h2>
-          <p className="sv mt-4 text-[13px] font-[300] tracking-[0.15em] text-muted">
-            厳選
-          </p>
-          <p className="sv mt-8 text-[15px] font-[300] leading-[2.2] text-fg/80 max-w-[640px]">
-            「産地の誇りと、料理人の感性が出会う場所」<br />
-            一部をご紹介します
-          </p>
-
-          {/* 生産者 */}
-          <div className="mt-16 md:mt-22">
-            <p className="sv text-[10px] tracking-[0.3em] uppercase text-muted mb-10 flex items-center gap-4">
-              <span>Producers</span>
-              <span className="flex-1 h-px bg-border" />
-            </p>
-
-            <div className="flex flex-col gap-6 md:gap-8">
-              <ProducerCard
-                className="sv sv-d1"
-                region="気仙沼"
-                name="陸上養殖ウニ"
-                company="〇〇水産"
-                description="海を汚さず、季節に縛られない。究極の鮮度と持続可能性の両立。"
-              />
-              <ProducerCard
-                className="sv sv-d2"
-                region="気仙沼"
-                name="もまれ牡蠣"
-                company="Naito Suisan"
-                description="三陸の荒波が磨き上げた、唯一無二の旨味の凝縮。"
-              />
-              <ProducerCard
-                className="sv sv-d3"
-                region="鳥取"
-                name="モサエビ"
-                company="〇〇水産"
-                description="幻と呼ばれた希少な逸品を、確かなブランドとして次世代へ。"
-              />
-            </div>
-          </div>
-
-          {/* 導入店舗 */}
-          <div className="mt-20 md:mt-28">
-            <p className="sv text-[10px] tracking-[0.3em] uppercase text-muted mb-10 flex items-center gap-4">
-              <span>Partners</span>
-              <span className="flex-1 h-px bg-border" />
-            </p>
-
-            <div className="max-w-[640px]">
-              <div className="sv flex flex-col">
-                <PartnerItem name="Madame Shrimp" area="銀座" />
-                <PartnerItem name="Restaurant 〇〇" area="麻布十番" />
-                <PartnerItem name="〇〇 〇〇" area="赤坂" />
-              </div>
-              <p className="sv mt-6 text-[13px] font-[300] text-muted/70 tracking-[0.04em] italic">
-                他、全国のトップシェフ、高級飲食店にて採用
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Hr />
-
-      {/* ===== 6. CONTACT ===== */}
+      {/* ===== 5. CONTACT ===== */}
       <section id="contact" className="px-6 py-24 md:py-36">
         <div className="mx-auto max-w-[960px]">
           <h2 className="sv font-serif text-[clamp(1.6rem,4vw,2.8rem)] font-[200] leading-[1.5] tracking-[0.02em]">
@@ -408,27 +344,6 @@ function ServiceItem({ title, description, className }: { title: string; descrip
   );
 }
 
-function ProducerCard({ region, name, company, description, className }: {
-  region: string; name: string; company: string; description: string; className?: string;
-}) {
-  return (
-    <div className={`border border-border p-8 md:p-10 transition-colors duration-400 hover:border-fg/20 ${className ?? ""}`}>
-      <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-3">{region}</p>
-      <h4 className="font-serif text-[17px] md:text-[19px] font-[300] leading-[1.6] tracking-[0.04em]">{name}</h4>
-      <p className="mt-1 text-[13px] font-[300] text-muted">{company}</p>
-      <p className="mt-4 text-[14px] font-[300] leading-[2.2] text-fg/70">{description}</p>
-    </div>
-  );
-}
-
-function PartnerItem({ name, area }: { name: string; area: string }) {
-  return (
-    <div className="border-t border-border py-4 flex items-baseline justify-between">
-      <span className="text-[15px] font-[300] tracking-[0.04em]">{name}</span>
-      <span className="text-[11px] tracking-[0.15em] text-muted">{area}</span>
-    </div>
-  );
-}
 
 function ContactForm() {
   const inputClass = "w-full border border-border bg-transparent px-4 py-3 text-[14px] font-[300] text-fg outline-none transition-colors duration-300 focus:border-fg/40 placeholder:text-muted/50";
