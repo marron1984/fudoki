@@ -323,9 +323,11 @@
       下記フォームよりお気軽にご連絡ください。
     </p>
 
-    <form id="contactForm" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-10">
-      <input type="hidden" name="form-name" value="contact">
-      <p class="hidden" aria-hidden="true"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <form id="contactForm" method="POST" action="https://formsubmit.co/fudoki@aska-g.com" class="space-y-10">
+      <input type="hidden" name="_subject" value="【FUDOKI】お問い合わせ">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="grid md:grid-cols-2 gap-x-10 gap-y-10">
         <label class="block">
           <span class="block font-serifjp text-[12px] tracking-[0.08em] text-fog mb-3">お名前 <span class="text-sumi">*</span></span>
@@ -420,7 +422,7 @@
     document.querySelectorAll('.reveal:not(.in-view)').forEach(el => el.classList.add('in-view'));
   }, 3000);
 
-  // contact form: send to Netlify Forms without leaving the page
+  // contact form: send to FormSubmit without leaving the page
   (function () {
     const form = document.getElementById('contactForm');
     if (!form) return;
@@ -429,10 +431,10 @@
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       btn.disabled = true;
-      fetch('/', {
+      fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
       }).then(function (res) {
         if (!res.ok) throw new Error('send failed');
         form.reset();
